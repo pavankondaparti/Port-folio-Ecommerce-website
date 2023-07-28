@@ -1,0 +1,29 @@
+<!-- tomorrow change to order -->
+<div class="container">
+  <div class="row mt-5 mb-5" *ngFor="let product of allProducts">
+    <ng-container *ngIf="product.productId == selectedId">
+      <div class="img-section col-12 col-md-7 bg-white">
+        <img src="{{ product.productImageUrl }}" class="view-image" />
+        <div class="button-section">
+          <button class="addToCart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Add to cart
+          </button>
+          <button class="addToCart">
+            <i class="fa-solid fa-shop"></i>
+            Buy Now
+          </button>
+        </div>
+      </div>
+      <div class="info-section col-12 col-md-5 pt-3 pb-3 text-center bg-white">
+        <h1 class="view-title detail">{{ product.productName }}</h1>
+        <h5 class="view-price detail">{{ product.productPrice | currency }}</h5>
+        <p class="view-desc detail">{{ product.productDescription }}</p>
+        <p class="detail">
+          Devlivered with in
+          <span class="highlight">{{ product.deliveryTimeSpan }}</span>
+        </p>
+      </div>
+    </ng-container>
+  </div>
+</div>

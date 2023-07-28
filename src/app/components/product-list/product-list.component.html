@@ -1,0 +1,27 @@
+<div class="container content-container">
+  <div class="row">
+    <div class="col-12 col-md-4 mt-5" *ngFor="let singleProduct of products">
+      <div class="card-section p-3 mb-3">
+        <img src="{{ singleProduct.productImageUrl }}" class="card-image" />
+        <h2 class="card-heading">
+          ProductName: {{ singleProduct.productName }}
+        </h2>
+        <p class="card-desc">
+          Description: {{ singleProduct.productDescription }}
+        </p>
+        <div class="card-buttons">
+          <a
+            [routerLink]="['/products', singleProduct.productId]"
+            class="viewDetails"
+            >View Details
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="addToCart">
+            Add To Cart
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
